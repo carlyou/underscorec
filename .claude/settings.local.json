@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)"
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(uv pip install:*)",
+      "Bash(uv run:*)",
+      "Bash(uv sync:*)",
+      "WebFetch(domain:docs.pytorch.org)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:numpy.org)",
+      "WebFetch(domain:stackoverflow.com)",
+    ],
+    "deny": []
+  }
+}

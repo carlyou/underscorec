@@ -1,0 +1,713 @@
+UnderscoreC Modular Benchmark Results - 2025-08-02 17:48:32.108700
+================================================================================
+
+Module Execution Summary:
+------------------------------
+bench_core_operations: SUCCESS (77 tests, 81.64s)
+bench_numpy_integration: SUCCESS (32 tests, 3.41s)
+bench_torch_integration: SUCCESS (31 tests, 4.33s)
+
+================================================================================
+
+Detailed Benchmark Results:
+------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.022ms ± 0.001ms
+  Test: 0.049ms ± 0.002ms
+  Speedup: 0.45x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.032ms ± 0.001ms
+  Test: 0.049ms ± 0.001ms
+  Speedup: 0.66x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.021ms ± 0.001ms
+  Test: 0.049ms ± 0.001ms
+  Speedup: 0.43x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.022ms ± 0.001ms
+  Test: 0.048ms ± 0.001ms
+  Speedup: 0.45x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.032ms ± 0.001ms
+  Test: 0.049ms ± 0.002ms
+  Speedup: 0.67x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.021ms ± 0.001ms
+  Test: 0.048ms ± 0.002ms
+  Speedup: 0.43x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.160ms ± 0.003ms
+  Test: 0.261ms ± 0.006ms
+  Speedup: 0.61x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.174ms ± 0.011ms
+  Test: 0.266ms ± 0.017ms
+  Speedup: 0.65x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.212ms ± 0.016ms
+  Test: 0.484ms ± 0.025ms
+  Speedup: 0.44x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.330ms ± 0.038ms
+  Test: 0.486ms ± 0.025ms
+  Speedup: 0.68x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.204ms ± 0.008ms
+  Test: 0.497ms ± 0.050ms
+  Speedup: 0.41x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.210ms ± 0.009ms
+  Test: 0.481ms ± 0.016ms
+  Speedup: 0.44x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.318ms ± 0.014ms
+  Test: 0.489ms ± 0.134ms
+  Speedup: 0.65x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.200ms ± 0.009ms
+  Test: 0.484ms ± 0.014ms
+  Speedup: 0.41x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 1.628ms ± 0.040ms
+  Test: 2.529ms ± 0.051ms
+  Speedup: 0.64x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 1.727ms ± 0.019ms
+  Test: 2.453ms ± 0.015ms
+  Speedup: 0.70x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.024ms ± 0.001ms
+  Test: 0.049ms ± 0.003ms
+  Speedup: 0.48x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.033ms ± 0.001ms
+  Test: 0.049ms ± 0.001ms
+  Speedup: 0.68x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.022ms ± 0.001ms
+  Test: 0.049ms ± 0.001ms
+  Speedup: 0.45x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.023ms ± 0.001ms
+  Test: 0.048ms ± 0.001ms
+  Speedup: 0.48x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.032ms ± 0.001ms
+  Test: 0.049ms ± 0.002ms
+  Speedup: 0.66x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.022ms ± 0.001ms
+  Test: 0.049ms ± 0.001ms
+  Speedup: 0.46x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.052ms ± 0.002ms
+  Test: 0.135ms ± 0.003ms
+  Speedup: 0.38x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.068ms ± 0.002ms
+  Test: 0.135ms ± 0.003ms
+  Speedup: 0.50x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.225ms ± 0.004ms
+  Test: 0.480ms ± 0.007ms
+  Speedup: 0.47x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.319ms ± 0.005ms
+  Test: 0.485ms ± 0.014ms
+  Speedup: 0.66x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.205ms ± 0.004ms
+  Test: 0.488ms ± 0.074ms
+  Speedup: 0.42x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.215ms ± 0.004ms
+  Test: 0.471ms ± 0.006ms
+  Speedup: 0.46x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.304ms ± 0.005ms
+  Test: 0.472ms ± 0.006ms
+  Speedup: 0.64x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.205ms ± 0.004ms
+  Test: 0.471ms ± 0.006ms
+  Speedup: 0.44x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.497ms ± 0.007ms
+  Test: 1.326ms ± 0.011ms
+  Speedup: 0.37x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.670ms ± 0.009ms
+  Test: 1.322ms ± 0.012ms
+  Speedup: 0.51x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.021ms ± 0.002ms
+  Test: 0.044ms ± 0.001ms
+  Speedup: 0.48x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.028ms ± 0.001ms
+  Test: 0.044ms ± 0.001ms
+  Speedup: 0.64x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.017ms ± 0.001ms
+  Test: 0.044ms ± 0.001ms
+  Speedup: 0.38x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.022ms ± 0.003ms
+  Test: 0.044ms ± 0.002ms
+  Speedup: 0.50x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.028ms ± 0.001ms
+  Test: 0.044ms ± 0.001ms
+  Speedup: 0.64x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.017ms ± 0.001ms
+  Test: 0.044ms ± 0.001ms
+  Speedup: 0.38x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.023ms ± 0.002ms
+  Test: 0.044ms ± 0.001ms
+  Speedup: 0.52x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.028ms ± 0.001ms
+  Test: 0.044ms ± 0.001ms
+  Speedup: 0.64x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.017ms ± 0.001ms
+  Test: 0.044ms ± 0.001ms
+  Speedup: 0.38x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.247ms ± 0.021ms
+  Test: 0.427ms ± 0.005ms
+  Speedup: 0.58x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.266ms ± 0.004ms
+  Test: 0.428ms ± 0.005ms
+  Speedup: 0.62x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.154ms ± 0.003ms
+  Test: 0.432ms ± 0.014ms
+  Speedup: 0.36x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.243ms ± 0.031ms
+  Test: 0.432ms ± 0.005ms
+  Speedup: 0.56x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.272ms ± 0.011ms
+  Test: 0.431ms ± 0.006ms
+  Speedup: 0.63x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.157ms ± 0.003ms
+  Test: 0.431ms ± 0.005ms
+  Speedup: 0.36x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.239ms ± 0.025ms
+  Test: 0.432ms ± 0.005ms
+  Speedup: 0.55x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.271ms ± 0.081ms
+  Test: 0.432ms ± 0.006ms
+  Speedup: 0.63x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.157ms ± 0.003ms
+  Test: 0.431ms ± 0.006ms
+  Speedup: 0.36x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.025ms ± 0.002ms
+  Test: 0.045ms ± 0.001ms
+  Speedup: 0.54x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.030ms ± 0.001ms
+  Test: 0.045ms ± 0.001ms
+  Speedup: 0.65x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.019ms ± 0.001ms
+  Test: 0.045ms ± 0.001ms
+  Speedup: 0.43x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.023ms ± 0.002ms
+  Test: 0.045ms ± 0.001ms
+  Speedup: 0.52x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.030ms ± 0.001ms
+  Test: 0.045ms ± 0.001ms
+  Speedup: 0.66x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.020ms ± 0.001ms
+  Test: 0.045ms ± 0.001ms
+  Speedup: 0.45x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.023ms ± 0.002ms
+  Test: 0.045ms ± 0.001ms
+  Speedup: 0.51x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.030ms ± 0.001ms
+  Test: 0.045ms ± 0.001ms
+  Speedup: 0.65x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.020ms ± 0.001ms
+  Test: 0.045ms ± 0.001ms
+  Speedup: 0.43x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.212ms ± 0.008ms
+  Test: 0.444ms ± 0.008ms
+  Speedup: 0.48x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.285ms ± 0.004ms
+  Test: 0.445ms ± 0.009ms
+  Speedup: 0.64x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.180ms ± 0.003ms
+  Test: 0.444ms ± 0.007ms
+  Speedup: 0.41x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.221ms ± 0.008ms
+  Test: 0.440ms ± 0.006ms
+  Speedup: 0.50x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.284ms ± 0.005ms
+  Test: 0.441ms ± 0.005ms
+  Speedup: 0.65x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.188ms ± 0.004ms
+  Test: 0.440ms ± 0.006ms
+  Speedup: 0.43x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.214ms ± 0.010ms
+  Test: 0.451ms ± 0.009ms
+  Speedup: 0.47x
+----------------------------------------
+Comparison: lambda+map vs underscorec
+  Baseline: 0.298ms ± 0.008ms
+  Test: 0.458ms ± 0.006ms
+  Speedup: 0.65x
+----------------------------------------
+Comparison: operator+partial vs underscorec
+  Baseline: 0.198ms ± 0.004ms
+  Test: 0.454ms ± 0.009ms
+  Speedup: 0.44x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.082ms ± 0.003ms
+  Test: 0.156ms ± 0.002ms
+  Speedup: 0.53x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.034ms ± 0.002ms
+  Test: 0.085ms ± 0.002ms
+  Speedup: 0.40x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.098ms ± 0.002ms
+  Test: 0.195ms ± 0.004ms
+  Speedup: 0.50x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.714ms ± 0.010ms
+  Test: 1.535ms ± 0.012ms
+  Speedup: 0.47x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.324ms ± 0.005ms
+  Test: 0.822ms ± 0.008ms
+  Speedup: 0.39x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.920ms ± 0.010ms
+  Test: 1.956ms ± 0.036ms
+  Speedup: 0.47x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.033ms ± 0.002ms
+  Test: 0.066ms ± 0.002ms
+  Speedup: 0.50x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.055ms ± 0.002ms
+  Test: 0.087ms ± 0.002ms
+  Speedup: 0.62x
+----------------------------------------
+Comparison: list_comprehension vs underscorec
+  Baseline: 0.162ms ± 1.017ms
+  Test: 0.197ms ± 0.985ms
+  Speedup: 0.82x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 0.99x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.06x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.000ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 0.54x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.01x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.02x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.003ms ± 0.000ms
+  Speedup: 0.36x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.015ms ± 0.001ms
+  Test: 0.015ms ± 0.001ms
+  Speedup: 1.00x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.015ms ± 0.001ms
+  Test: 0.015ms ± 0.001ms
+  Speedup: 1.00x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.015ms ± 0.009ms
+  Test: 0.027ms ± 0.001ms
+  Speedup: 0.54x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.02x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.03x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.003ms ± 0.000ms
+  Speedup: 0.35x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.00x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.00x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.002ms ± 0.000ms
+  Test: 0.002ms ± 0.000ms
+  Speedup: 1.01x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.002ms ± 0.000ms
+  Test: 0.002ms ± 0.000ms
+  Speedup: 1.01x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.002ms ± 0.000ms
+  Test: 0.002ms ± 0.000ms
+  Speedup: 1.01x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.002ms ± 0.000ms
+  Test: 0.002ms ± 0.000ms
+  Speedup: 1.02x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.009ms ± 0.001ms
+  Test: 0.010ms ± 0.000ms
+  Speedup: 0.91x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.005ms ± 0.000ms
+  Test: 0.005ms ± 0.000ms
+  Speedup: 1.00x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.059ms ± 0.002ms
+  Test: 0.077ms ± 0.006ms
+  Speedup: 0.76x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.040ms ± 0.001ms
+  Test: 0.040ms ± 0.001ms
+  Speedup: 1.00x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.000ms ± 0.000ms
+  Test: 0.000ms ± 0.000ms
+  Speedup: 0.91x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.000ms ± 0.000ms
+  Test: 0.000ms ± 0.000ms
+  Speedup: 0.98x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 0.98x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 0.98x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 0.99x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.006ms ± 0.000ms
+  Test: 0.006ms ± 0.000ms
+  Speedup: 1.02x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.12x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 0.99x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 0.96x
+----------------------------------------
+Comparison: numpy_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.02x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.63x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.62x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.66x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.002ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.37x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.002ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.35x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.002ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.37x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.039ms ± 0.005ms
+  Test: 0.037ms ± 0.004ms
+  Speedup: 1.04x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.038ms ± 0.004ms
+  Test: 0.037ms ± 0.005ms
+  Speedup: 1.03x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.039ms ± 0.005ms
+  Test: 0.037ms ± 0.005ms
+  Speedup: 1.04x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.002ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.53x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.002ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.49x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.002ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.54x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.004ms ± 0.000ms
+  Test: 0.004ms ± 0.000ms
+  Speedup: 1.16x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.004ms ± 0.000ms
+  Test: 0.004ms ± 0.000ms
+  Speedup: 1.16x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.004ms ± 0.000ms
+  Test: 0.003ms ± 0.000ms
+  Speedup: 1.19x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.008ms ± 0.000ms
+  Test: 0.064ms ± 0.002ms
+  Speedup: 0.12x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.009ms ± 0.001ms
+  Test: 0.008ms ± 0.000ms
+  Speedup: 1.14x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.151ms ± 0.012ms
+  Test: 0.290ms ± 0.012ms
+  Speedup: 0.52x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.113ms ± 0.009ms
+  Test: 0.111ms ± 0.008ms
+  Speedup: 1.02x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.03x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.05x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.03x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.001ms ± 0.000ms
+  Test: 0.001ms ± 0.000ms
+  Speedup: 1.01x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.000ms ± 0.000ms
+  Test: 0.000ms ± 0.000ms
+  Speedup: 0.57x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.000ms ± 0.000ms
+  Test: 0.000ms ± 0.000ms
+  Speedup: 0.64x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.000ms ± 0.000ms
+  Test: 0.000ms ± 0.000ms
+  Speedup: 0.63x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.000ms ± 0.000ms
+  Test: 0.000ms ± 0.000ms
+  Speedup: 0.61x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.000ms ± 0.000ms
+  Test: 0.000ms ± 0.000ms
+  Speedup: 0.61x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.000ms ± 0.000ms
+  Test: 0.000ms ± 0.000ms
+  Speedup: 0.57x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.000ms ± 0.000ms
+  Test: 0.000ms ± 0.000ms
+  Speedup: 0.61x
+----------------------------------------
+Comparison: torch_native vs underscorec
+  Baseline: 0.000ms ± 0.000ms
+  Test: 0.000ms ± 0.000ms
+  Speedup: 0.56x
+----------------------------------------
