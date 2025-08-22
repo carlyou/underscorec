@@ -197,12 +197,12 @@ class TestBitwiseOperations:
         assert expr(1) == 4   # 1 << 2 = 4
         assert expr(0) == 0   # 0 << 2 = 0
         
-    def test_right_shift(self):
-        """Test right shift operation (when used as bitwise, not composition)."""
-        expr = __ >> 1
-        assert expr(8) == 4   # 8 >> 1 = 4
-        assert expr(5) == 2   # 5 >> 1 = 2
-        assert expr(1) == 0   # 1 >> 1 = 0
+    def test_right_shift_pipeline(self):
+        """Test right shift as pipeline operation (immediate evaluation)."""
+        # Right shift now performs immediate evaluation: data >> expr
+        assert 8 >> (__ + 1) == 9   # 8 + 1 = 9
+        assert 5 >> (__ * 2) == 10  # 5 * 2 = 10
+        assert 1 >> (__ - 1) == 0   # 1 - 1 = 0
 
 
 class TestUnaryOperations:
@@ -423,7 +423,10 @@ class TestRepresentation:
         assert repr(__ | 5) == "(__ | 5)"
         assert repr(__ ^ 7) == "(__ ^ 7)"
         assert repr(__ << 2) == "(__ << 2)"
-        assert repr(__ >> 1) == "(__ >> 1)"
+        # Note: >> now creates pipeline operations, not bitwise expressions
+        # Test pipeline composition instead
+        pipeline = __ >> (lambda x: x + 1)
+        assert " >> " in repr(pipeline)
         
     def test_unary_representations(self):
         """Test representations of unary operations."""

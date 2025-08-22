@@ -122,6 +122,10 @@ PyObject *apply_torch_operation(UnderscoreObject *self,
   case UnderscoreOperation::NE:
     result = torch::ne(tensor, operand);
     break;
+  default:
+    // Unsupported operation - should not reach here due to early check
+    // Return nullptr to fall back to standard Python protocols
+    return nullptr;
   }
 
   return THPVariable_Wrap(result);

@@ -23,6 +23,10 @@ result = mul_add(arr)
 # PyTorch integration  
 tensor = torch.tensor([1., 2., 3., 4., 5.])
 tensor.apply_(__ * 2 + 1)
+
+# Pipeline operators for immediate evaluation
+result = 5 >> (__ * 2 + 1)  # 11 (reverse pipeline)
+result = (__ * 2 + 1) >> 5  # 11 (forward pipeline)
 ```
 
 ### Method Calls and Attribute Access
@@ -36,17 +40,46 @@ numel_2d = __.shape >> __[0] * __[1]
 numel_2d(matrix)
 ```
 
-### Composition
+### Function Composition and Pipeline Operators
+
+The `>>` operator provides flexible composition and pipeline functionality with three distinct behaviors:
+
+#### 1. Expression Composition (`expr >> expr` or `expr >> callable`)
 ```python
-# Chain operations using >> operator
-data = [1, 2, 3, 4, 5]
+# Chain expressions for later evaluation
 pipeline = (__ * 2) >> (__ - 5) >> abs
 result = map(pipeline, data)  # Apply transformations in sequence
 
 # Compose with built-in functions
 text_processor = __.strip() >> __.split(',') >> len
 length = text_processor("  Hello, World!  ")  # 2
+
+# Compose with lambda functions
+transform = (__ + 1) >> (lambda x: x * 2) >> str
+result = transform(5)  # "12"
 ```
+
+#### 2. Forward Pipeline (`expr >> data`)
+```python
+# Immediately evaluate expression with data (left-to-right)
+result = (__ * 2 + 1) >> 5  # Evaluates to 11
+result = __.upper() >> "hello"  # Evaluates to "HELLO"
+
+# Useful for one-off transformations
+processed = (__ - __.mean()) / __.std() >> np.array([1, 2, 3, 4, 5])
+```
+
+#### 3. Reverse Pipeline (`data >> expr`)
+```python
+# Immediately evaluate expression with data (right-to-left)
+result = 5 >> (__ * 2 + 1)  # Evaluates to 11  
+result = "hello" >> __.upper()  # Evaluates to "HELLO"
+
+# Natural data flow for chaining operations
+result = data >> (__ * 2) >> (__ + 1) >> (__ / 3)
+```
+
+**Performance Note**: Forward pipelines (`expr >> expr >> data`) enable optimization through expression composition before evaluation, while reverse pipelines (`data >> expr >> expr`) evaluate step-by-step.
 
 ## Why use it
 

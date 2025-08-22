@@ -35,16 +35,15 @@ enum class UnderscoreOperation : int {
   OR = 14,
   XOR = 15,
   LSHIFT = 16,
-  RSHIFT = 17, // NOTE: RSHIFT is overloaded for function composition
   // Unary operations
-  NEG = 18,    // Unary negation (-)
-  ABS = 19,    // Absolute value
-  INVERT = 20, // Bitwise invert (~)
+  NEG = 17,    // Unary negation (-)
+  ABS = 18,    // Absolute value
+  INVERT = 19, // Bitwise invert (~)
   // Other operations
-  GETITEM = 21,      // Array/object indexing
-  GETATTR = 22,      // Attribute access (__.attr)
-  METHOD_CALL = 23,  // Method call with arguments
-  FUNCTION_CALL = 24 // Function composition (was COMPOSE)
+  GETITEM = 20,      // Array/object indexing
+  GETATTR = 21,      // Attribute access (__.attr)
+  METHOD_CALL = 22,  // Method call with arguments
+  PIPE = 23 // Pipeline composition (>> operator)
 };
 
 // Underscore object with clear, maintainable fields
