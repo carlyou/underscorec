@@ -1,6 +1,6 @@
 [project]
 name = "underscorec"
-version = "0.1.0"
+version = "0.1.1"
 description = "C-based functional programming library with __ syntax for Python"
 readme = "README.md"
 requires-python = ">=3.10"

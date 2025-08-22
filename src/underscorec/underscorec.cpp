@@ -9,6 +9,7 @@
  */
 
 #include <Python.h>
+#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 #include <numpy/arrayobject.h> // NumPy C API for import_array()
 
 // Modular headers for specific integrations
@@ -75,7 +76,7 @@ static PyObject *create_operation(UnderscoreObject *self,
                                   PyObject *operand) {
   // For multi-reference operation like __ OP __
   if (operand && PyObject_TypeCheck(operand, &UnderscoreType) &&
-      op_type != UnderscoreOperation::FUNCTION_CALL) {
+      op_type != UnderscoreOperation::PIPE) {
     return create_multiref_operation(self, op_type,
                                      (UnderscoreObject *)operand);
   }
@@ -186,8 +187,6 @@ static PyObject *underscore_eval_single(UnderscoreObject *self, PyObject *arg) {
     return PyNumber_Xor(arg, self->operand);
   case UnderscoreOperation::LSHIFT:
     return PyNumber_Lshift(arg, self->operand);
-  case UnderscoreOperation::RSHIFT:
-    return PyNumber_Rshift(arg, self->operand);
   // Unary operations
   case UnderscoreOperation::NEG:
     return PyNumber_Negative(arg);
@@ -212,8 +211,8 @@ static PyObject *underscore_eval_single(UnderscoreObject *self, PyObject *arg) {
     Py_DECREF(method);
     return result;
   }
-  case UnderscoreOperation::FUNCTION_CALL:
-    // Function call: self->operand(arg)
+  case UnderscoreOperation::PIPE:
+    // Pipeline: self->operand(arg)
     return PyObject_CallFunctionObjArgs(self->operand, arg, NULL);
   case UnderscoreOperation::IDENTITY:
     Py_INCREF(arg);
@@ -228,7 +227,6 @@ static PyObject *underscore_eval_single(UnderscoreObject *self, PyObject *arg) {
  * Helper function to apply an underscore expression call to input
  */
 static PyObject *underscore_eval(UnderscoreObject *expr, PyObject *arg) {
-
   PyObject *result = nullptr;
   if (expr->left_expr && expr->right_expr) {
     // This is a multi-reference expression - recursively handle it
@@ -282,26 +280,27 @@ static PyObject *underscore_call(UnderscoreObject *self, PyObject *args,
   }
   if (current->operation == UnderscoreOperation::GETATTR) {
     // Smart handling: check if attribute is callable
-    // If called with single argument and attribute is not callable, execute GETATTR directly
+    // If called with single argument and attribute is not callable, execute
+    // GETATTR directly
     if (PyTuple_Size(args) == 1 && kwargs == nullptr) {
       PyObject *arg = PyTuple_GET_ITEM(args, 0);
       PyObject *attr = PyObject_GetAttr(arg, current->operand);
-      
+
       if (attr) {
         int is_callable = PyCallable_Check(attr);
         Py_DECREF(attr);
-        
         if (!is_callable) {
           // Attribute exists but is not callable (like tensor.shape property)
           // Execute GETATTR operation directly instead of creating METHOD_CALL
           return underscore_eval(self, arg);
         }
       } else {
-        // Clear the error from PyObject_GetAttr for attribute that doesn't exist
+        // Clear the error from PyObject_GetAttr for attribute that doesn't
+        // exist
         PyErr_Clear();
       }
     }
-    
+
     // Attribute is callable or error occurred - create method call as before
     return create_method_call(self, args, kwargs);
   }
@@ -407,13 +406,57 @@ static PyObject *underscore_lshift(UnderscoreObject *self, PyObject *other) {
   return create_operation(self, UnderscoreOperation::LSHIFT, other);
 }
 
-static PyObject *underscore_rshift(UnderscoreObject *self, PyObject *other) {
-  // Check if other is a function/callable for composition, otherwise do bitwise
-  // right shift
-  if (PyCallable_Check(other)) {
-    return create_operation(self, UnderscoreOperation::FUNCTION_CALL, other);
+static PyObject *underscore_rshift(PyObject *left, PyObject *right) {
+  bool left_is_underscore = PyObject_TypeCheck(left, &UnderscoreType);
+  bool right_is_underscore = PyObject_TypeCheck(right, &UnderscoreType);
+  if (left_is_underscore && right_is_underscore) {
+    // Case 1: expr >> expr2 (composition)
+    return create_operation((UnderscoreObject *)left,
+                            UnderscoreOperation::PIPE, right);
+  } else if (left_is_underscore && !right_is_underscore) {
+    // Case 2: expr >> ? (check if callable for composition vs immediate
+    // evaluation)
+    if (PyCallable_Check(right)) {
+      // expr >> callable: Create composition
+      return create_operation((UnderscoreObject *)left,
+                              UnderscoreOperation::PIPE, right);
+    } else {
+      // expr >> data: Evaluate immediately
+      return underscore_eval((UnderscoreObject *)left, right);
+    }
+  } else if (!left_is_underscore && right_is_underscore) {
+    // Case 3: ? >> expr (check if callable for composition vs immediate
+    // evaluation)
+    if (PyCallable_Check(left)) {
+      // callable >> expr: Create composition (callable applied first, then
+      // expr) Create identity >> callable first
+      UnderscoreObject *identity = (UnderscoreObject *)PyObject_CallObject(
+          (PyObject *)&UnderscoreType, NULL);
+      if (!identity)
+        return nullptr;
+
+      PyObject *result =
+          create_operation(identity, UnderscoreOperation::PIPE, left);
+      if (!result) {
+        Py_DECREF(identity);
+        return nullptr;
+      }
+
+      // Find the end of the chain and append the right expression
+      UnderscoreObject *current = (UnderscoreObject *)result;
+      while (current->next_expr) {
+        current = current->next_expr;
+      }
+      current->next_expr = deep_copy((UnderscoreObject *)right);
+
+      return result;
+    } else {
+      // data >> expr: Evaluate immediately
+      return underscore_eval((UnderscoreObject *)right, left);
+    }
   } else {
-    return create_operation(self, UnderscoreOperation::RSHIFT, other);
+    // Neither is UnderscoreObject - shouldn't happen in our context
+    Py_RETURN_NOTIMPLEMENTED;
   }
 }
 
@@ -501,8 +544,6 @@ static const char *get_operation_string(UnderscoreOperation op) {
     return " ^ ";
   case UnderscoreOperation::LSHIFT:
     return " << ";
-  case UnderscoreOperation::RSHIFT:
-    return " >> ";
   default:
     return " ? ";
   }
@@ -531,7 +572,6 @@ static PyObject *repr_single_expr(UnderscoreObject *self,
   case UnderscoreOperation::OR:
   case UnderscoreOperation::XOR:
   case UnderscoreOperation::LSHIFT:
-  case UnderscoreOperation::RSHIFT:
     return PyUnicode_FromFormat("(%U%s%R)", current_repr,
                                 get_operation_string(self->operation),
                                 self->operand);
@@ -552,7 +592,7 @@ static PyObject *repr_single_expr(UnderscoreObject *self,
     Py_XDECREF(args_repr);
     return result;
   }
-  case UnderscoreOperation::FUNCTION_CALL:
+  case UnderscoreOperation::PIPE:
     return PyUnicode_FromFormat("%U >> %R", current_repr, self->operand);
   default:
     return PyUnicode_FromFormat("%U ??", current_repr);
